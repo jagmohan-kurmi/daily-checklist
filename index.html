@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f6f1" />
+    <meta name="description" content="A calm, private checklist for the things you want to get done today." />
+    <title>Little List — Daily Checklist</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="logic.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="app">
+      <header class="topline"><a class="brand" href="./">little list<span>.</span></a><span class="privacy">Saved on this device</span></header>
+      <section class="intro">
+        <p class="eyebrow" id="today"></p>
+        <h1>One thing at a time.</h1>
+        <p>A little list can make a busy day feel lighter.</p>
+      </section>
+      <section class="card">
+        <form id="task-form" class="add-form">
+          <label class="sr-only" for="task-title">New task</label>
+          <input id="task-title" name="title" maxlength="120" placeholder="What would you like to do?" autocomplete="off" required />
+          <button class="primary" type="submit">Add task</button>
+        </form>
+        <div class="toolbar">
+          <span id="summary" class="summary"></span>
+          <div class="filters" role="group" aria-label="Filter tasks">
+            <button type="button" class="filter active" data-filter="all">All</button>
+            <button type="button" class="filter" data-filter="active">To do</button>
+            <button type="button" class="filter" data-filter="done">Done</button>
+          </div>
+        </div>
+        <ul id="tasks" class="tasks" aria-live="polite"></ul>
+        <div id="empty" class="empty" hidden></div>
+        <div id="clear-row" class="clear-row" hidden><button id="clear-completed" class="text-button" type="button">Clear completed</button></div>
+      </section>
+      <p class="footnote">Your checklist stays in this browser. No account, no uploads.</p>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </main>
+  </body>
+</html>
